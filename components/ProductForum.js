@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -188,7 +189,7 @@ export default function ProductForum({
               <div>Add Image</div>
               <input
                 type="file"
-                accept=".jpg, .png"
+                accept=".jpg, .png, .jpeg, .webp"
                 onChange={uploadImages}
                 className="hidden"
               />

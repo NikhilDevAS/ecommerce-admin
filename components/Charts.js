@@ -193,11 +193,11 @@ export default function Charts() {
         <div className="w-full mt-10 py-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="py-10 shadow-md border rounded-md">
-              {/* {data1 && <AreaChartSpace data={data1} />} */}
+              {data1 && <AreaChartSpace data={data1} />}
             </div>
 
             <div className="py-10 shadow-md border rounded-md">
-              {/* {barGraphData.length > 0 && <Chart data={barGraphData} />} */}
+              {barGraphData.length > 0 && <Chart data={barGraphData} />}
             </div>
           </div>
 

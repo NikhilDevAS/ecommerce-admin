@@ -1,521 +1,141 @@
 import Layout from '@/components/Layout';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function Settings() {
-  [
-    {
-      _id: '6532c391fc555a7ba5cfe5d3',
-      id: '52da359a',
-      userId: '653105e09f1c8152a5a6c294',
-      products: [
-        {
-          _id: '651d11dbbcbaf787163083a1',
-          title: 'Nikhil',
-          description: 'Ab aliquip delectus',
-          price: 44,
-          __v: 0,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/zTepQJhxcr04d38-pbQgx6ne.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/OxYT7_2aQi77Z1cV7cC4HsxB.jpg',
-          ],
-          category: {
-            _id: '652aa55a6129f83baa3265a6',
-            name: 'Mobile',
-            properties: [],
-            __v: 0,
-          },
-          updatedAt: '2023-10-20T15:44:47.976Z',
-          profitPercentage: 90,
-          quantity: 5,
-        },
-        {
-          _id: '651d50a68d7adc77d34f038e',
-          title: 'Quia ut laboris est ',
-          description: 'Qui iusto provident',
-          price: 79,
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697469125/K6C92tjAih-s9CWdE3duHfl1.png',
-          ],
-          properties: {
-            'Storage (GB)': '128',
-            Color: 'Black',
-          },
-          updatedAt: '2023-10-16T15:12:13.926Z',
-          quantity: 1,
-        },
-        {
-          _id: '651d8825f40bdc8dc99da6c6',
-          title: 'Cupidatat vel non of',
-          description: 'Autem rerum non in i',
-          price: 45,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434202/kla2qIikXDK4aCmJlcle5Jeq.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434209/acpwcw6Bq83LMu44S-jIxXCZ.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434987/p-bZTvY_G-fUlAxVcuI0OweM.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696435066/1msP48LgJYRvZk05LD9ArqbS.jpg',
-          ],
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:12:27.168Z',
-          quantity: 1,
-        },
-        {
-          _id: '652702317ce59c462a45fcad',
-          title: 'Quasi cum hic aspern',
-          description: 'Deserunt quis quia f',
-          price: 27,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697055277/DufdLhonQlI_XkC1F2OVO9SS.png',
-          ],
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:12:42.203Z',
-          quantity: 1,
-        },
-        {
-          _id: '652a75b676c74de121de244d',
-          title: 'Quis tempor laboris ',
-          description: 'Animi ad iure non e',
-          price: 28,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697281441/K2OgdLHN6wcszoQNHTDEo_qV.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697281454/sAOcIJTkf7otHQBPMans8j_g.png',
-          ],
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          __v: 0,
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:13:01.901Z',
-          quantity: 1,
-        },
-        {
-          _id: '652aa7206129f83baa3265ca',
-          title: 'Iphone Pro Max',
-          description: 'test description ',
-          price: 120,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697294075/UepYyqs372Hd32kcuIYb_K1l.png',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697294084/lrwBgrIF4YYHPcT_OoGZeIBz.png',
-          ],
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          __v: 0,
-          properties: {
-            'Storage (GB)': '520',
-            Color: 'Blue',
-          },
-          updatedAt: '2023-10-20T15:45:53.988Z',
-          profitPercentage: 10,
-          quantity: 1,
-        },
-      ],
-      paid: false,
-      subtotal: 519,
-      gst: 8,
-      netamount: 560.52,
-      paymentType: 'COD',
-      createdAt: '2023-09-20T18:14:41.746Z',
-      updatedAt: '2023-09-20T19:13:33.224Z',
-      __v: 0,
-      status: 'Rejected',
-    },
-    {
-      _id: '6532c391fc555a7ba5cfe5d3',
-      id: '52da359a',
-      userId: '653105e09f1c8152a5a6c294',
-      products: [
-        {
-          _id: '651d11dbbcbaf787163083a1',
-          title: 'Nikhil',
-          description: 'Ab aliquip delectus',
-          price: 44,
-          __v: 0,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/zTepQJhxcr04d38-pbQgx6ne.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/OxYT7_2aQi77Z1cV7cC4HsxB.jpg',
-          ],
-          category: {
-            _id: '652aa55a6129f83baa3265a6',
-            name: 'Mobile',
-            properties: [],
-            __v: 0,
-          },
-          updatedAt: '2023-10-20T15:44:47.976Z',
-          profitPercentage: 90,
-          quantity: 5,
-        },
-        {
-          _id: '651d50a68d7adc77d34f038e',
-          title: 'Quia ut laboris est ',
-          description: 'Qui iusto provident',
-          price: 79,
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697469125/K6C92tjAih-s9CWdE3duHfl1.png',
-          ],
-          properties: {
-            'Storage (GB)': '128',
-            Color: 'Black',
-          },
-          updatedAt: '2023-10-16T15:12:13.926Z',
-          quantity: 1,
-        },
-        {
-          _id: '651d8825f40bdc8dc99da6c6',
-          title: 'Cupidatat vel non of',
-          description: 'Autem rerum non in i',
-          price: 45,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434202/kla2qIikXDK4aCmJlcle5Jeq.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434209/acpwcw6Bq83LMu44S-jIxXCZ.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434987/p-bZTvY_G-fUlAxVcuI0OweM.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696435066/1msP48LgJYRvZk05LD9ArqbS.jpg',
-          ],
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:12:27.168Z',
-          quantity: 1,
-        },
-        {
-          _id: '652702317ce59c462a45fcad',
-          title: 'Quasi cum hic aspern',
-          description: 'Deserunt quis quia f',
-          price: 27,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697055277/DufdLhonQlI_XkC1F2OVO9SS.png',
-          ],
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:12:42.203Z',
-          quantity: 1,
-        },
-        {
-          _id: '652a75b676c74de121de244d',
-          title: 'Quis tempor laboris ',
-          description: 'Animi ad iure non e',
-          price: 28,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697281441/K2OgdLHN6wcszoQNHTDEo_qV.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697281454/sAOcIJTkf7otHQBPMans8j_g.png',
-          ],
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          __v: 0,
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:13:01.901Z',
-          quantity: 1,
-        },
-        {
-          _id: '652aa7206129f83baa3265ca',
-          title: 'Iphone Pro Max',
-          description: 'test description ',
-          price: 120,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697294075/UepYyqs372Hd32kcuIYb_K1l.png',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697294084/lrwBgrIF4YYHPcT_OoGZeIBz.png',
-          ],
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          __v: 0,
-          properties: {
-            'Storage (GB)': '520',
-            Color: 'Blue',
-          },
-          updatedAt: '2023-10-20T15:45:53.988Z',
-          profitPercentage: 10,
-          quantity: 1,
-        },
-      ],
-      paid: false,
-      subtotal: 519,
-      gst: 8,
-      netamount: 560.52,
-      paymentType: 'COD',
-      createdAt: '2023-10-20T18:14:41.746Z',
-      updatedAt: '2023-10-20T19:13:33.224Z',
-      __v: 0,
-      status: 'Rejected',
-    },
-    {
-      _id: '6532c41ffc555a7ba5cfe5dd',
-      id: '4a9507a2',
-      userId: '653105e09f1c8152a5a6c294',
-      products: [
-        {
-          _id: '651d11dbbcbaf787163083a1',
-          title: 'Nikhil',
-          description: 'Ab aliquip delectus',
-          price: 44,
-          __v: 0,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/zTepQJhxcr04d38-pbQgx6ne.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697056180/OxYT7_2aQi77Z1cV7cC4HsxB.jpg',
-          ],
-          category: {
-            _id: '652aa55a6129f83baa3265a6',
-            name: 'Mobile',
-            properties: [],
-            __v: 0,
-          },
-          updatedAt: '2023-10-20T15:44:47.976Z',
-          profitPercentage: 90,
-          quantity: 1,
-        },
-        {
-          _id: '651d50a68d7adc77d34f038e',
-          title: 'Quia ut laboris est ',
-          description: 'Qui iusto provident',
-          price: 79,
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1697469125/K6C92tjAih-s9CWdE3duHfl1.png',
-          ],
-          properties: {
-            'Storage (GB)': '128',
-            Color: 'Black',
-          },
-          updatedAt: '2023-10-16T15:12:13.926Z',
-          quantity: 1,
-        },
-        {
-          _id: '651d8825f40bdc8dc99da6c6',
-          title: 'Cupidatat vel non of',
-          description: 'Autem rerum non in i',
-          price: 45,
-          images: [
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434202/kla2qIikXDK4aCmJlcle5Jeq.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434209/acpwcw6Bq83LMu44S-jIxXCZ.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696434987/p-bZTvY_G-fUlAxVcuI0OweM.jpg',
-            'https://res.cloudinary.com/dikpoctfq/image/upload/v1696435066/1msP48LgJYRvZk05LD9ArqbS.jpg',
-          ],
-          __v: 0,
-          category: {
-            _id: '652aa5bf6129f83baa3265a9',
-            name: 'Iphone',
-            parent: '652aa55a6129f83baa3265a6',
-            properties: [
-              {
-                name: 'Color',
-                value: ['Red', 'White', 'Black', 'Blue'],
-              },
-              {
-                name: 'Storage (GB)',
-                value: ['32', '64', '128', '256', '520'],
-              },
-            ],
-            __v: 0,
-          },
-          properties: {
-            Color: 'Black',
-            'Storage (GB)': '256',
-          },
-          updatedAt: '2023-10-16T15:12:27.168Z',
-          quantity: 1,
-        },
-      ],
-      paid: false,
-      subtotal: 168,
-      gst: 8,
-      netamount: 181.44,
-      paymentType: 'COD',
-      createdAt: '2023-10-20T18:17:03.633Z',
-      updatedAt: '2023-10-20T19:09:36.162Z',
-      __v: 0,
-      status: 'Delivered',
-    },
-  ];
+  const [products, setProducts] = useState([]);
+  const [featuredProductId, setFeaturedProductId] = useState('');
+  const [featuredProduct, setFeaturedProduct] = useState({});
+  const [gstRate, setGstRate] = useState(0);
+  const [currentGstRate, setCurrentGstRate] = useState(0);
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  async function getProducts() {
+    try {
+      const response = await axios.get('/api/products');
+      if (response.data) {
+        setProducts(response.data);
+      }
+      const featuredProduct = await axios.get('/api/addfeaturedproduct');
+      if (featuredProduct.data) {
+        setFeaturedProduct(featuredProduct.data);
+        setFeaturedProductId(featuredProduct.data._id);
+      }
+
+      const result = await axios.get('/api/gstrate');
+      if (result.data) {
+        setCurrentGstRate(result.data[0].gstRate);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function addFeaturedProduct() {
+    if (featuredProductId) {
+      const response = await axios.put('/api/addfeaturedproduct', {
+        currentProduct: featuredProduct ? featuredProduct._id : '',
+        newProductId: featuredProductId,
+      });
+      if (response.data) {
+        getProducts();
+      }
+    }
+  }
+
+  async function addGstRate() {
+    try {
+      if (gstRate) {
+        const response = await axios.post('/api/gstrate', { gstRate });
+        if (response.data) {
+          getProducts();
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <Layout>
-      Settings Page is Here
-      <h1>Add Percentage for profit</h1>
-      <h1>Select Featured Product</h1>
-      <h1>Change Password</h1>
+      <h1>Settings</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="rounded-md shadow-md p-5">
+          <h1>Add GST Rate</h1>
+          <div className="mt-5">
+            <label>GST Rate (%)</label>
+            <input
+              type="number"
+              placeholder="Enter Gst Rate (%)"
+              value={gstRate}
+              onChange={(e) => setGstRate(e.target.value)}
+            />
+            <button
+              className="py-2 px-5 bg-black text-sm text-white font-bold w-1/2"
+              onClick={() => addGstRate()}
+            >
+              Save
+            </button>
+            <div className="mt-5">
+              <p className="font-bold uppercase text-gray-400">
+                Current Gst Rate
+              </p>
+              <div className="mt-3">
+                <p>{currentGstRate}%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md shadow-md p-5">
+          <h1>Add / Change Featured Product</h1>
+          <div className="mt-5">
+            <label>Select Product</label>
+            <select
+              value={featuredProductId}
+              onChange={(e) => setFeaturedProductId(e.target.value)}
+            >
+              {products &&
+                products.map((product) => {
+                  return (
+                    <option key={product._id} value={product._id}>
+                      {product.title}
+                    </option>
+                  );
+                })}
+            </select>
+            <button
+              className="py-2 px-5 bg-black text-sm text-white font-bold w-1/2"
+              onClick={() => addFeaturedProduct()}
+            >
+              Save
+            </button>
+          </div>
+          <div className="mt-5">
+            <p className="font-bold uppercase text-gray-400">
+              Current Featured Product
+            </p>
+            <div className="mt-3">
+              <p>{featuredProduct && featuredProduct.title}</p>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md shadow-md p-5">
+          <h1>Change Password</h1>
+          <div className="mt-5">
+            <label>Current Password</label>
+            <input type="password" placeholder="*******" />
+            <label>New Password</label>
+            <input type="password" placeholder="*******" />
+            <label>Confirm Password</label>
+            <input type="password" placeholder="*******" />
+            <button className="py-2 px-5 bg-black text-sm text-white font-bold w-1/2">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

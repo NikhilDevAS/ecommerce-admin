@@ -101,7 +101,7 @@ function Categories({ swal }) {
   }
   return (
     <Layout>
-      <h1>Categories Page</h1>
+      <h1>Categories</h1>
       <label>
         {editedCategory
           ? `Edit Category "${editedCategory.name}"`
@@ -141,7 +141,7 @@ function Categories({ swal }) {
           {properties?.length > 0 &&
             properties.map((property, index) => {
               return (
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2 mb-4" key={index}>
                   <input
                     className="mb-0"
                     type="text"
